@@ -1,11 +1,38 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+
+import { useState } from "react";
+import { TradingHeader } from "@/components/trading/TradingHeader";
+import { MarketOverview } from "@/components/trading/MarketOverview";
+import { TrendingStocks } from "@/components/trading/TrendingStocks";
+import { Portfolio } from "@/components/trading/Portfolio";
+import { StockChart } from "@/components/trading/StockChart";
+import { WatchList } from "@/components/trading/WatchList";
 
 const Index = () => {
+  const [selectedStock, setSelectedStock] = useState("AAPL");
+
   return (
-    <div className="min-h-screen flex items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
+      <TradingHeader />
+      
+      <div className="container mx-auto px-4 py-6">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
+          {/* Left Column - Market Overview & Trending */}
+          <div className="lg:col-span-3 space-y-6">
+            <MarketOverview />
+            <TrendingStocks onSelectStock={setSelectedStock} />
+            <WatchList />
+          </div>
+          
+          {/* Center Column - Main Chart */}
+          <div className="lg:col-span-6">
+            <StockChart selectedStock={selectedStock} />
+          </div>
+          
+          {/* Right Column - Portfolio */}
+          <div className="lg:col-span-3">
+            <Portfolio />
+          </div>
+        </div>
       </div>
     </div>
   );
