@@ -1,7 +1,6 @@
-
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { TrendingUp, User, Bell, Portfolio, PiggyBank, ShoppingCart } from "lucide-react";
+import { TrendingUp, User, Bell, Briefcase, PiggyBank, ShoppingCart } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
@@ -15,7 +14,7 @@ export const NavigationBar = () => {
   
   const navItems = [
     { path: "/", label: "Dashboard", icon: TrendingUp },
-    { path: "/portfolio", label: "Portfolio", icon: Portfolio },
+    { path: "/portfolio", label: "Portfolio", icon: Briefcase },
     { path: "/sip", label: "SIP", icon: PiggyBank },
     { path: "/buy-stocks", label: "Buy Stocks", icon: ShoppingCart },
   ];
