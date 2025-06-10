@@ -1,6 +1,6 @@
 
 import { useState } from "react";
-import { TradingHeader } from "@/components/trading/TradingHeader";
+import { NavigationBar } from "@/components/navigation/NavigationBar";
 import { MarketOverview } from "@/components/trading/MarketOverview";
 import { TrendingStocks } from "@/components/trading/TrendingStocks";
 import { Portfolio } from "@/components/trading/Portfolio";
@@ -12,7 +12,7 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
-      <TradingHeader />
+      <NavigationBar />
       
       <div className="container mx-auto px-4 py-6">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
